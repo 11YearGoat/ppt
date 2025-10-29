@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇬🇷 The Complete Story of Greece</title>
+<meta name="theme-color" content="#f9f9f9">
+<style>
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    color: #222;
+  }
+  header {
+    text-align: center;
+    padding: 25px 10px;
+    background: linear-gradient(135deg, #1f6feb, #2563eb);
+    color: white;
+    border-bottom: 4px solid #1a4fbf;
+  }
+  h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+  }
+  details {
+    background: white;
+    border-radius: 16px;
+    margin: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  summary {
+    cursor: pointer;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #f0f4ff;
+    border-bottom: 2px solid #e5e9ff;
+  }
+  summary:hover {
+    background: #e8edff;
+  }
+  .content {
+    padding: 16px 22px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  hr.divider {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, #2563eb, #93c5fd);
+    border-radius: 3px;
+    width: 90%;
+    margin: 18px auto;
+  }
+  footer {
+    text-align: center;
+    padding: 25px 10px;
+    color: #555;
+    font-size: 0.9rem;
+  }
+</style>
+
+<!-- Inline Manifest -->
+<script type="application/manifest+json">
+{
+  "name": "The Complete Story of Greece",
+  "short_name": "Greece Story",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f9f9f9",
+  "theme_color": "#2563eb",
+  "icons": []
+}
+</script>
+
+<!-- Inline Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register(URL.createObjectURL(new Blob([`
+    self.addEventListener('install', e => {
+      e.waitUntil(
+        caches.open('greece-cache').then(c => c.addAll(['./']))
+      );
+    });
+    self.addEventListener('fetch', e => {
+      e.respondWith(
+        caches.match(e.request).then(r => r || fetch(e.request))
+      );
+    });
+  `], {type:'text/javascript'})));
+}
+</script>
+</head>
+
+<body>
+<header>
+  <h1>🇬🇷 THE COMPLETE STORY OF GREECE</h1>
+  <p>From Ancient Wonders to Modern Spirit</p>
+</header>
+
+<hr class="divider">
+
+<details>
+  <summary>🌍 PART 1 – LAND, NATURE & GEOGRAPHY</summary>
+  <div class="content">
+    🏔️ <b>Landscape & Natural Features</b> – Greece has mountains, plains, and dramatic coastlines shaped by tectonic history.<br><br>
+    🏝️ <b>Islands & Coastlines</b> – Over 2,000 islands, with the Aegean and Ionian seas defining its beauty.<br><br>
+    🌤️ <b>Climate & Environment</b> – A warm Mediterranean climate; sunny and dry summers.<br><br>
+    🌿 <b>Flora, Fauna & Conservation</b> – Rich biodiversity, including olive trees, cypress, and native wildlife.<br><br>
+    🌋 <b>Volcanoes & Geological Wonders</b> – Santorini’s volcanic caldera remains one of the world’s natural marvels.
+  </div>
+</details>
+
+<hr class="divider">
+
+<details>
+  <summary>🏺 PART 2 – HISTORY & CIVILIZATION</summary>
+  <div class="content">
+    🗿 <b>Prehistoric & Bronze Age (7000–1100 BCE)</b> – Early farmers and the Minoans began Greek culture.<br><br>
+    🌑 <b>Dark Ages (1100–800 BCE)</b> – Decline after Mycenae, yet oral traditions kept history alive.<br><br>
+    🏛️ <b>Archaic (800–500 BCE)</b> – Rise of city-states like Athens and Sparta.<br><br>
+    🌟 <b>Classical (500–323 BCE)</b> – Peak of art, democracy, and philosophy.<br><br>
+    ⚔️ <b>Hellenistic (323–31 BCE)</b> – Greek culture spread under Alexander the Great.<br><br>
+    🏺 <b>Roman & Byzantine (31 BCE–1453 CE)</b> – Blending of empires and religions.<br><br>
+    🕌 <b>Ottoman Rule (1453–1821)</b> – Centuries of foreign control and resistance.<br><br>
+    ⚖️ <b>Modern (1821–Today)</b> – Independence and rebuilding of the Greek nation.<br><br>
+    📜 <b>Historical Legacy</b> – Birthplace of democracy, philosophy, and Western art.
+  </div>
+</details>
+
+<hr class="divider">
+
+<details>
+  <summary>👗 PART 3 – CULTURE, LANGUAGE & DAILY LIFE</summary>
+  <div class="content">
+    🎨 <b>Art & Architecture</b> – Temples, sculptures, mosaics define Greek aesthetics.<br><br>
+    🎭 <b>Theater, Music & Philosophy</b> – Home of tragedy, comedy, and great minds like Socrates.<br><br>
+    🍽️ <b>Cuisine & Festivals</b> – Olive oil, seafood, and lively celebrations.<br><br>
+    👕 <b>Traditional Clothing & Customs</b> – Folk attire reflects regional diversity.<br><br>
+    🧬 <b>Greek Language & Expressions</b> – One of the world’s oldest spoken tongues.<br><br>
+    ✝️ <b>Religion & Belief Systems</b> – Orthodox Christianity shapes daily life.
+  </div>
+</details>
+
+<hr class="divider">
+
+<details>
+  <summary>⚙️ PART 4 – SCIENCE, EDUCATION & INNOVATION</summary>
+  <div class="content">
+    🧠 <b>Ancient Thinkers & Inventors</b> – Archimedes, Pythagoras, and Aristotle changed knowledge forever.<br><br>
+    👑 <b>Famous Historical Figures</b> – Alexander, Pericles, and many reformers.<br><br>
+    🎓 <b>Education System & Literacy</b> – Strong schooling and universities with classical roots.<br><br>
+    💡 <b>Modern Technology & Innovation</b> – Growing tech hubs and startups in Athens.<br><br>
+    ⚛️ <b>Contributions to Science</b> – From geometry to astronomy, Greece’s influence is deep.
+  </div>
+</details>
+
+<hr class="divider">
+
+<details>
+  <summary>💶 PART 5 – GOVERNMENT, ECONOMY & SOCIETY</summary>
+  <div class="content">
+    🏛️ <b>Political System & Governance</b> – Parliamentary republic with democratic roots.<br><br>
+    ⚖️ <b>Legal System & Constitution</b> – Based on civil law traditions.<br><br>
+    💰 <b>Currency & Economy</b> – Euro; tourism, shipping, and services dominate.<br><br>
+    🏭 <b>Key Industries & Exports</b> – Olive oil, marble, textiles, and technology.<br><br>
+    🚜 <b>Agriculture & Rural Economy</b> – Olives, grapes, and wheat sustain rural life.<br><br>
+    🌿 <b>Energy & Sustainability</b> – Expanding solar and wind energy sectors.<br><br>
+    🏙️ <b>Population & Demographics</b> – Around 10 million, mostly urban.<br><br>
+    ❤️ <b>Healthcare & Quality of Life</b> – Public healthcare with improving services.
+  </div>
+</details>
+
+<hr class="divider">
+
+<details>
+  <summary>✈️ PART 6 – MODERN GREECE & GLOBAL ROLE</summary>
+  <div class="content">
+    🌍 <b>International Relations</b> – Active EU and NATO member.<br><br>
+    🏰 <b>Tourism & World Heritage</b> – Acropolis, Delphi, Meteora, and Santorini.<br><br>
+    🛣️ <b>Transportation & Infrastructure</b> – Modern highways and island ferries.<br><br>
+    🪖 <b>Defense & Military Structure</b> – Compulsory service and modern navy.<br><br>
+    📈 <b>Environmental Challenges</b> – Tackling wildfires and pollution.<br><br>
+    🧭 <b>National Symbols & Identity</b> – The flag, anthem, and Greek resilience.<br><br>
+    💫 <b>Interesting Facts</b> – Greece has more islands than people realize.
+  </div>
+</details>
+
+<hr class="divider">
+
+<details>
+  <summary>🌟 THE SPIRIT OF GREECE</summary>
+  <div class="content">
+    🇬🇷 Greece stands as a bridge between past and future — where sunlight meets philosophy, where ruins whisper progress, and where democracy was born yet continues to evolve.
+  </div>
+</details>
+
+<footer>
+  Made with 🇬🇷 love • Works offline • 2025 Edition
+</footer>
+
+</body>
+</html>
