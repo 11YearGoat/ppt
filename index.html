@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇬🇷 The Complete Story of Greece</title>
-<meta name="theme-color" content="#f9f9f9">
+<title>🇬🇷 Greece Story & Social Research Gallery</title>
+<meta name="theme-color" content="#2563eb">
+
 <style>
+  /* GENERAL */
   body {
     font-family: "Poppins", system-ui, sans-serif;
     background: #f9f9f9;
@@ -40,9 +42,7 @@
     background: #f0f4ff;
     border-bottom: 2px solid #e5e9ff;
   }
-  summary:hover {
-    background: #e8edff;
-  }
+  summary:hover { background: #e8edff; }
   .content {
     padding: 16px 22px;
     font-size: 0.95rem;
@@ -62,41 +62,84 @@
     color: #555;
     font-size: 0.9rem;
   }
+
+  /* IMAGE GALLERY */
+  section.gallery {
+    background: #0f0f0f;
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+  }
+  section.gallery h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    color: #00e0ff;
+  }
+  section.gallery p {
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 25px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    padding: 0 10px;
+  }
+  .grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.25s;
+    background: #222;
+  }
+  .grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 14px #00e0ffb5;
+  }
+  .grid img.loading {
+    filter: blur(8px);
+  }
+  .end-footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 25px;
+  }
 </style>
 
-<!-- Inline Manifest -->
+<!-- PWA manifest -->
 <script type="application/manifest+json">
 {
-  "name": "The Complete Story of Greece",
-  "short_name": "Greece Story",
+  "name": "Greece Story & Research Gallery",
+  "short_name": "Greece+Social",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#f9f9f9",
+  "background_color": "#0f0f0f",
   "theme_color": "#2563eb",
   "icons": []
 }
 </script>
 
-<!-- Inline Service Worker -->
+<!-- Offline support -->
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register(URL.createObjectURL(new Blob([`
     self.addEventListener('install', e => {
-      e.waitUntil(
-        caches.open('greece-cache').then(c => c.addAll(['./']))
-      );
+      e.waitUntil(caches.open('greeksocial-cache').then(c => c.addAll(['./'])));
     });
     self.addEventListener('fetch', e => {
-      e.respondWith(
-        caches.match(e.request).then(r => r || fetch(e.request))
-      );
+      e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
     });
-  `], {type:'text/javascript'})));
+  `], { type: 'text/javascript' })));
 }
 </script>
 </head>
 
 <body>
+
 <header>
   <h1>🇬🇷 THE COMPLETE STORY OF GREECE</h1>
   <p>From Ancient Wonders to Modern Spirit</p>
@@ -104,14 +147,11 @@ if ('serviceWorker' in navigator) {
 
 <hr class="divider">
 
-<details>
+<!-- === Greece Content === -->
+<details open>
   <summary>🌍 PART 1 – LAND, NATURE & GEOGRAPHY</summary>
   <div class="content">
-    🏔️ <b>Landscape & Natural Features</b> – Greece has mountains, plains, and dramatic coastlines shaped by tectonic history.<br><br>
-    🏝️ <b>Islands & Coastlines</b> – Over 2,000 islands, with the Aegean and Ionian seas defining its beauty.<br><br>
-    🌤️ <b>Climate & Environment</b> – A warm Mediterranean climate; sunny and dry summers.<br><br>
-    🌿 <b>Flora, Fauna & Conservation</b> – Rich biodiversity, including olive trees, cypress, and native wildlife.<br><br>
-    🌋 <b>Volcanoes & Geological Wonders</b> – Santorini’s volcanic caldera remains one of the world’s natural marvels.
+    Greece’s landscape is a stunning mix of mountains, plains, and shimmering coastlines. The Aegean and Ionian seas cradle over 2,000 islands, each with its own charm.
   </div>
 </details>
 
@@ -120,29 +160,7 @@ if ('serviceWorker' in navigator) {
 <details>
   <summary>🏺 PART 2 – HISTORY & CIVILIZATION</summary>
   <div class="content">
-    🗿 <b>Prehistoric & Bronze Age (7000–1100 BCE)</b> – Early farmers and the Minoans began Greek culture.<br><br>
-    🌑 <b>Dark Ages (1100–800 BCE)</b> – Decline after Mycenae, yet oral traditions kept history alive.<br><br>
-    🏛️ <b>Archaic (800–500 BCE)</b> – Rise of city-states like Athens and Sparta.<br><br>
-    🌟 <b>Classical (500–323 BCE)</b> – Peak of art, democracy, and philosophy.<br><br>
-    ⚔️ <b>Hellenistic (323–31 BCE)</b> – Greek culture spread under Alexander the Great.<br><br>
-    🏺 <b>Roman & Byzantine (31 BCE–1453 CE)</b> – Blending of empires and religions.<br><br>
-    🕌 <b>Ottoman Rule (1453–1821)</b> – Centuries of foreign control and resistance.<br><br>
-    ⚖️ <b>Modern (1821–Today)</b> – Independence and rebuilding of the Greek nation.<br><br>
-    📜 <b>Historical Legacy</b> – Birthplace of democracy, philosophy, and Western art.
-  </div>
-</details>
-
-<hr class="divider">
-
-<details>
-  <summary>👗 PART 3 – CULTURE, LANGUAGE & DAILY LIFE</summary>
-  <div class="content">
-    🎨 <b>Art & Architecture</b> – Temples, sculptures, mosaics define Greek aesthetics.<br><br>
-    🎭 <b>Theater, Music & Philosophy</b> – Home of tragedy, comedy, and great minds like Socrates.<br><br>
-    🍽️ <b>Cuisine & Festivals</b> – Olive oil, seafood, and lively celebrations.<br><br>
-    👕 <b>Traditional Clothing & Customs</b> – Folk attire reflects regional diversity.<br><br>
-    🧬 <b>Greek Language & Expressions</b> – One of the world’s oldest spoken tongues.<br><br>
-    ✝️ <b>Religion & Belief Systems</b> – Orthodox Christianity shapes daily life.
+    From Minoans to philosophers to Alexander’s empire, Greece shaped Western civilization’s story.
   </div>
 </details>
 
@@ -151,51 +169,7 @@ if ('serviceWorker' in navigator) {
 <details>
   <summary>⚙️ PART 4 – SCIENCE, EDUCATION & INNOVATION</summary>
   <div class="content">
-    🧠 <b>Ancient Thinkers & Inventors</b> – Archimedes, Pythagoras, and Aristotle changed knowledge forever.<br><br>
-    👑 <b>Famous Historical Figures</b> – Alexander, Pericles, and many reformers.<br><br>
-    🎓 <b>Education System & Literacy</b> – Strong schooling and universities with classical roots.<br><br>
-    💡 <b>Modern Technology & Innovation</b> – Growing tech hubs and startups in Athens.<br><br>
-    ⚛️ <b>Contributions to Science</b> – From geometry to astronomy, Greece’s influence is deep.
-  </div>
-</details>
-
-<hr class="divider">
-
-<details>
-  <summary>💶 PART 5 – GOVERNMENT, ECONOMY & SOCIETY</summary>
-  <div class="content">
-    🏛️ <b>Political System & Governance</b> – Parliamentary republic with democratic roots.<br><br>
-    ⚖️ <b>Legal System & Constitution</b> – Based on civil law traditions.<br><br>
-    💰 <b>Currency & Economy</b> – Euro; tourism, shipping, and services dominate.<br><br>
-    🏭 <b>Key Industries & Exports</b> – Olive oil, marble, textiles, and technology.<br><br>
-    🚜 <b>Agriculture & Rural Economy</b> – Olives, grapes, and wheat sustain rural life.<br><br>
-    🌿 <b>Energy & Sustainability</b> – Expanding solar and wind energy sectors.<br><br>
-    🏙️ <b>Population & Demographics</b> – Around 10 million, mostly urban.<br><br>
-    ❤️ <b>Healthcare & Quality of Life</b> – Public healthcare with improving services.
-  </div>
-</details>
-
-<hr class="divider">
-
-<details>
-  <summary>✈️ PART 6 – MODERN GREECE & GLOBAL ROLE</summary>
-  <div class="content">
-    🌍 <b>International Relations</b> – Active EU and NATO member.<br><br>
-    🏰 <b>Tourism & World Heritage</b> – Acropolis, Delphi, Meteora, and Santorini.<br><br>
-    🛣️ <b>Transportation & Infrastructure</b> – Modern highways and island ferries.<br><br>
-    🪖 <b>Defense & Military Structure</b> – Compulsory service and modern navy.<br><br>
-    📈 <b>Environmental Challenges</b> – Tackling wildfires and pollution.<br><br>
-    🧭 <b>National Symbols & Identity</b> – The flag, anthem, and Greek resilience.<br><br>
-    💫 <b>Interesting Facts</b> – Greece has more islands than people realize.
-  </div>
-</details>
-
-<hr class="divider">
-
-<details>
-  <summary>🌟 THE SPIRIT OF GREECE</summary>
-  <div class="content">
-    🇬🇷 Greece stands as a bridge between past and future — where sunlight meets philosophy, where ruins whisper progress, and where democracy was born yet continues to evolve.
+    Pythagoras and Aristotle didn’t just study—they invented logic, geometry, and reason itself. Modern Greece keeps that spirit alive through innovation and academia.
   </div>
 </details>
 
@@ -203,161 +177,41 @@ if ('serviceWorker' in navigator) {
   Made with 🇬🇷 love • Works offline • 2025 Edition
 </footer>
 
+<!-- === IMAGE GALLERY === -->
+<section class="gallery">
+  <h2>📸 Social Research Project Gallery</h2>
+  <p>All WhatsApp-collected visuals for research use</p>
+  <div class="grid"></div>
+  <div class="end-footer">© 2025 Aditya – Research Image Viewer</div>
+</section>
+
+<!-- JS for dynamic images -->
+<script>
+const base = "https://raw.githubusercontent.com/11yeargoat/ppt/main/";
+const files = [
+  "WhatsApp Image 2025-11-02 at 9.41.29 PM.jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.30 PM.jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.31 PM (1).jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.31 PM (2).jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.31 PM.jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.32 PM (1).jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.32 PM (2).jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.32 PM.jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.33 PM (1).jpeg",
+  "WhatsApp Image 2025-11-02 at 9.41.33 PM.jpeg",
+  "WhatsApp Image 2025-11-02 at 9.46.25 PM.jpeg"
+];
+
+// Lazy loading for performance
+const grid = document.querySelector(".grid");
+files.forEach(name => {
+  const img = document.createElement("img");
+  img.loading = "lazy";
+  img.src = base + encodeURIComponent(name);
+  img.alt = name;
+  grid.appendChild(img);
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Research Images</title>
-  <style>
-    body {
-      background: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      text-align: center;
-      padding: 20px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 10px;
-      padding: 10px;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 10px #00ffcc;
-    }
-    footer {
-      text-align: center;
-      color: #888;
-      padding: 10px;
-      font-size: 0.9em;
-    }
-  </style>
-</head>
-<body>
-  <h1>Social Research Project – WhatsApp Image Collection</h1>
-  <div class="grid">
-  
-  <!-- Images start -->
-  <!-- replace REPO_URL below with your GitHub raw link -->
-  <!-- Example: https://raw.githubusercontent.com/username/repo/main/folder/ -->
-
-  <script>
-const base = "https://raw.githubusercontent.com/11yeargoat/ppt/main/";   // <-- replace this line 
-    const files = [
-      "WhatsApp Image 2025-11-02 at 9.41.29 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.30 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.31 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.31 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.31 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.32 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.32 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.32 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.33 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.33 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.34 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.34 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.34 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.35 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.35 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.36 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.36 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.37 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.37 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.38 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.38 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.38 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.39 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.39 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.39 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.40 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.40 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.41 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.41 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.42 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.42 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.42 PM (3).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.42 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.43 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.43 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.43 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.44 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.44 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.44 PM (3).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.44 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.45 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.45 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.46 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.46 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.46 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.47 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.41.47 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.24 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.24 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.25 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.25 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.26 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.26 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.27 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.27 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.28 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.28 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.29 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.29 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.30 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.30 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.30 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.31 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.31 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.32 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.32 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.34 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.34 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.41 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.41 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.46 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.46 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.44.46 PM (2).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.46.09 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.46.10 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.46.10 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.46.11 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.46.11 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.46.24 PM (1).jpeg",
-      "WhatsApp Image 2025-11-02 at 9.46.24 PM.jpeg",
-      "WhatsApp Image 2025-11-02 at 9.46.25 PM.jpeg"
-    ];
-    
-    const container = document.querySelector(".grid");
-    files.forEach(f => {
-      const img = document.createElement("img");
-      img.src = base + encodeURIComponent(f);
-      img.alt = f;
-      container.appendChild(img);
-    });
-  </script>
-  </div>
-
-  <footer>© 2025 Aditya – Research Image Viewer</footer>
-</body>
-</html>
-
