@@ -205,3 +205,159 @@ if ('serviceWorker' in navigator) {
 
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Research Images</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+      padding: 10px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px #00ffcc;
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Social Research Project – WhatsApp Image Collection</h1>
+  <div class="grid">
+  
+  <!-- Images start -->
+  <!-- replace REPO_URL below with your GitHub raw link -->
+  <!-- Example: https://raw.githubusercontent.com/username/repo/main/folder/ -->
+
+  <script>
+const base = "https://raw.githubusercontent.com/11yeargoat/ppt/main/";   // <-- replace this line 
+    const files = [
+      "WhatsApp Image 2025-11-02 at 9.41.29 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.30 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.31 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.31 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.31 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.32 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.32 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.32 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.33 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.33 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.34 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.34 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.34 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.35 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.35 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.36 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.36 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.37 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.37 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.38 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.38 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.38 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.39 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.39 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.39 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.40 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.40 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.41 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.41 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.42 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.42 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.42 PM (3).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.42 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.43 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.43 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.43 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.44 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.44 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.44 PM (3).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.44 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.45 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.45 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.46 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.46 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.46 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.47 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.41.47 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.24 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.24 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.25 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.25 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.26 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.26 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.27 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.27 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.28 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.28 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.29 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.29 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.30 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.30 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.30 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.31 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.31 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.32 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.32 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.34 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.34 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.41 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.41 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.46 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.46 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.44.46 PM (2).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.46.09 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.46.10 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.46.10 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.46.11 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.46.11 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.46.24 PM (1).jpeg",
+      "WhatsApp Image 2025-11-02 at 9.46.24 PM.jpeg",
+      "WhatsApp Image 2025-11-02 at 9.46.25 PM.jpeg"
+    ];
+    
+    const container = document.querySelector(".grid");
+    files.forEach(f => {
+      const img = document.createElement("img");
+      img.src = base + encodeURIComponent(f);
+      img.alt = f;
+      container.appendChild(img);
+    });
+  </script>
+  </div>
+
+  <footer>© 2025 Aditya – Research Image Viewer</footer>
+</body>
+</html>
+
