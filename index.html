@@ -117,114 +117,13 @@
   <li>Greece joins the European Union and balances tradition with modern life</li>
 </ul>
 
-<h2>📜 Historical Legacy & Ancient Civilizations</h2>
-<p>Ancient Greece is called the cradle of Western civilization for its contributions to democracy, philosophy, science, and art. Its influence shaped Rome, the Byzantine Empire, and modern Europe.</p>
-<ul>
-  <li>Greece is birthplace of democracy and philosophy</li>
-  <li>Greek ideas influenced many civilizations</li>
-  <li>Cultural legacy shapes the modern world</li>
-</ul>
-
-<h2>🖼️ Image Gallery</h2>
-<div class="gallery" id="gallery"></div>
-
-<<script>
-  const base = "https://raw.githubusercontent.com/11yeargoat/ppt/main/";
-  const files = [
-    "WhatsApp Image 2025-11-02 at 9.41.29 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.30 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.31 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.31 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.31 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.32 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.32 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.32 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.33 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.33 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.34 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.34 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.34 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.35 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.35 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.36 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.36 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.37 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.37 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.38 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.38 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.38 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.39 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.39 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.39 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.40 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.40 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.41 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.41 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.42 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.42 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.42 PM (3).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.42 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.43 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.43 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.43 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.44 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.44 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.44 PM (3).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.44 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.45 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.45 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.46 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.46 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.46 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.47 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.41.47 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.24 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.24 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.25 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.25 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.26 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.26 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.27 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.27 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.28 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.28 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.29 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.29 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.30 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.30 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.30 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.31 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.31 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.32 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.32 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.34 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.34 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.41 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.41 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.46 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.46 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.44.46 PM (2).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.46.09 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.46.10 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.46.10 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.46.11 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.46.11 PM.jpeg",
-    "WhatsApp Image 2025-11-02 at 9.46.24 PM (1).jpeg",
-    "WhatsApp Image 2025-11-02 at 9.46.24 PM.jpeg",
-    "txt.txt",
-    "pdf.pdf",
-    "WhatsApp Image 2025-11-02 at 9.46.25 PM.jpeg"
-  ];
-  const gallery = document.getElementById("gallery");
-  files.forEach(f => {
-    const img = document.createElement("img");
-    img.src = base + encodeURIComponent(f);
-    img.alt = f;
-    img.loading = "lazy";
-    gallery.appendChild(img);
-  });
-</script>
-
+<a
+  href="https://raw.githubusercontent.com/11yeargoat/ppt/main/pdf.pdf"
+  download="Greece-History.pdf"
+  style="display:inline-block;padding:10px 14px;border-radius:6px;background:#004aad;color:#fff;text-decoration:none;font:600 14px/1.2 system-ui,Segoe UI,Roboto,sans-serif"
+>
+  Download PDF
+</a>
 
 </body>
 </html>
